@@ -1,12 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS - Dom</title>
+    <style>
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        border: 1px solid black;
+      }
+      button {
+        background-color: tomato;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <script src="index.js"></script>
+    <div class="wrapper">
+      <div id="myText"></div>
+      <div>
+        <button><</button>
+        <button>></button>
+        <button>*</button>
+      </div>
+    </div>
+    <script>
+      var count = 0;
+      var myText = document.getElementById("myText");
+      var buttons = document.querySelectorAll("button");
+      buttons[0].addEventListener("click", clickMinor);
+      buttons[1].addEventListener("click", clickPlus);
+      buttons[2].addEventListener("x", clickPlus);
+      // var clickMinor = function (){
+
+      // }
+      // var clickMinor = ()=>console.log("")
+      function drawCount() {
+        myText.innerText = count;
+      }
+      function clickPlus() {
+        count++;
+        drawCount();
+      }
+      function clickMinor() {
+        count--;
+        drawCount();
+      }
+    </script>
   </body>
 </html>
